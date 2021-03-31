@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="flex h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h-100{
+            height: 100%;
+        }
+        .flex{display: flex;flex-direction:column;}
+        .flex-row{display: flex;flex-direction:row;}
+        .flex-item{flex:1;}
+    </style>
+</head>
+<body class="flex flex-item">
+    <div class="flex flex-item" id="app">
+        <h1>{{title}}</h1>
+        <div class="flex-item flex flex-row">
+            <div class="flex-item">
+                <div v-for="item in configs">
+                    ttt
+                </div>
+                <button @click="newConfig">+</button>
+            </div>
+            <div class="flex-item flex-row flex">
+                <textarea v-model="text" class="flex-item"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/d3-require@1.2.4/dist/d3-require.js"></script>
+    <script>
+        d3.require("vue")
+        .then(createApp);
+        function createApp(Vue){
+            return new Vue({
+                data(){
+                    return {
+                        title:"webpack.config.json 生成",
+                        text:JSON.stringify({}),
+                        configs:[]
+                    }
+                },
+                computed: {
+                },
+                methods:{
+                    newConfig(){
+                        this.configs.push();
+                    }
+                },
+                el:document.querySelector("#app")
+            });
+        }
+    </script>
+    <script type="module">
+        import Vue from "https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js"
+
+        const scheme = {
+            type:"object",
+            //pro
+        }
+
+        function defaultMetaConfig(){
+            return {
+                enter:"./src/index.js"
+            }
+        }
+
+    </script>
+</body>
+</html>

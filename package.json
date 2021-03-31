@@ -1,0 +1,9 @@
+{
+  "$schema": "https://jsonschema.gitee.io/schema.package.json",
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+    "cd-express": "^1.0.2"
+  }
+}
